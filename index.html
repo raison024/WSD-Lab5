@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>WSD-Lab5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body onload="loadAnimations()">
+
+<div class="container main-cont d-flex flex-column justify-content-center align-items-center">
+
+    <!--  Navbar  -->
+    <nav>
+        <h1>JavaScript Form Validation</h1>
+    </nav>
+    <!--Form-->
+    <div class="form" id="form">
+                <h3>Registration Form</h3>
+            <form>
+                <div class="row">
+                    
+                        <div class="input-field">
+                            <label for="name">Name <span>*</span></label>
+                                <input type="text" name="name" id="name" placeholder="Enter your name" onkeyup="nameValidate()" oninput="this.value = this.value.replace(/^[0-9]$/, '')">
+                            <span id="nameResp"></span>
+                        </div>
+                    
+                    
+                        <div class="input-field">
+                            <label for="phone">Phone Number <span>*</span></label>
+                            <input type="number" name="phone" id="phone" placeholder="Enter your phone number" onkeyup="phoneValidation()" oninput="this.value = this.value.replace(/^[a-zA-Z]$/, '')">
+                            <span id="phoneResp"></span>
+                        </div>
+                    
+                    
+                        <div class="input-field">
+                            <label for="password">Password <span>*</span> <button type="button" onclick="showPass()"><i class="fa-solid fa-eye" id="showPassIcon"></i></button>  </label>
+                            <input type="password" name="password" id="password" placeholder="Enter your password" onkeyup="confirmPassword(), checkPass()">
+                            <span id="passResp"></span>
+                        </div>
+                    
+                    
+                        <div class="input-field">
+                            <label for="conpass">Confirm Password <span>*</span> <button type="button" onclick="showConPass()"><i class="fa-solid fa-eye" id="showConPassIcon"></i></button></label>
+                            <input type="password" name="conpass" id="conpass" onkeyup="confirmPassword()" placeholder="Enter password again">
+                            <span id="conResp"></span>
+                        </div>
+                    
+                    
+                        <div class="input-field">
+                            <label for="email">Email <span>*</span></label>
+                            <input type="email" name="email" id="email" placeholder="Enter your email">
+                            <span id="emailResp"></span>
+                        </div>
+                    
+                    
+                        <div class="input-field">
+                            <label for="age">Age <span class="text-danger">*</span></label>
+                            <input type="number" name="age" id="age" placeholder="Enter your age" onkeyup="ageCheck()">
+                            <span id="ageResp"></span>
+                        </div>
+                    
+                        
+                            <button class="submit" type="button" onclick="validateForm()">Submit</button>
+                        
+                </div>
+            </form>
+    </div>
+
+</div>
+
+<!--Scripts-->
+<script src="assets/js/scripts.js"></script>
+</body>
+</html>
